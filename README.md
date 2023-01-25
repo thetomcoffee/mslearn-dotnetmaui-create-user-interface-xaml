@@ -1,3 +1,39 @@
+# thetomcoffee fork notes:  
+
+Wiring up of events can be done in XAML or C# code behind.  In order to follow separation of concerns best practice, 
+one can wire up, for example, button events, in constructor of C# code behind class, e.g. 
+```C#
+public partial class MainPage : ContentPage, IPage
+{
+    public MainPage()
+    {
+        InitializeComponent();
+        Counter.Clicked += OnCounterClicked;
+    }
+
+    ...
+
+    private void OnCounterClicked(object sender, EventArgs e)
+    {
+        ...
+    }
+}
+```
+
+However, it may be personal preference of the programmer to wire up events in the XAML.  
+For example:  
+```XAML
+<Button Grid.Column="0"
+    Text="Save" 
+    WidthRequest="100" 
+    Clicked="OnSaveButtonClicked" />
+```
+
+This button uses `Clicked="OnSaveButtonClicked"` in order to wire up the method `OnSaveButtonClicked`. 
+This style is similar to previous coding paradigms Microsoft has used in ASP Classic and ASP.NET web pages.  
+
+
+# original README: 
 
 # Contributing
 
