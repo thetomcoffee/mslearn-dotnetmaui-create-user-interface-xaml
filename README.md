@@ -19,6 +19,7 @@ public partial class MainPage : ContentPage, IPage
     }
 }
 ```
+Wire up of methods to controls is done with the `+=` operator. 
 
 However, it may be personal preference of the programmer to wire up events in the XAML.  
 For example:  
